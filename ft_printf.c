@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:20:07 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/06 23:01:31 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/07 01:15:07 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	type_handle(const char c, va_list args)
 
 	len = 0;
 	if (c == 'c')
-		len += ft_putchar(va_arg(args, int));
+		len += ft_printchar(va_arg(args, int));
 	else if (c == 's')
-		//
+		len += ft_printstr(va_arg(args, char);
 	else if (c == 'p')
 		//
 	else if (c == 'd')
@@ -32,7 +32,7 @@ static int	type_handle(const char c, va_list args)
 	else if (c == 'X')
 		//
 	else if (c == '%')
-		//
+		len += write(1, '%', 1); 
 	return (len);
 }
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 			len += type_handle((str[i + 1]), args);
 		}
 		else
-			len += ft_putchar(str[i]);
+			len += ft_printchar(str[i]);
 		i++;
 	}
 
