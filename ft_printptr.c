@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 21:04:58 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/08 23:02:26 by mfaria-b         ###   ########.fr       */
+/*   Created: 2023/11/08 21:27:52 by mfaria-b          #+#    #+#             */
+/*   Updated: 2023/11/08 22:33:29 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_printptr(unsigned long long ptr)
+{
+	int	len;
 
-int	ft_printf(const char *str, ...);
-int	ft_printchar(char c);
-int	ft_printstr(const char *str);
-int	ft_printptr(unsigned long long ptr);
-int	ft_printnbr(int nb);
+	len = 0;
+	
+	if (ptr == 0)
+	{
+		len = ft_printstr("(nil)");
+		return (len);
+	}
+	ft_printstr("0x");
+	len += 2;
 
-#endif
 
+}
