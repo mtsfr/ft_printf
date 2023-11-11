@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 21:21:35 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 22:52:59 by mfaria-b         ###   ########.fr       */
+/*   Created: 2023/11/10 21:54:21 by mfaria-b          #+#    #+#             */
+/*   Updated: 2023/11/10 21:56:54 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(const char *str)
+int	ft_printunsigned(unsigned int nb)
 {
-	int	i;
+	char	*ptr;
+	int		len;
 
-	i = 0;
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (str[i])
-	{
-		ft_printchar(str[i]);
-		i++;
-	}
-	return (i);
+	len = 0;
+	ptr = ft_utoa_base(nb, 10, "0123456789");
+	len = ft_printstr(ptr);
+	free(ptr);
+	return (len);
 }

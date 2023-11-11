@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:27:52 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/08 22:33:29 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:52:42 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_printptr(unsigned long long ptr)
 	int	len;
 
 	len = 0;
-	
 	if (ptr == 0)
 	{
 		len = ft_printstr("(nil)");
@@ -25,6 +24,6 @@ int	ft_printptr(unsigned long long ptr)
 	}
 	ft_printstr("0x");
 	len += 2;
-
-
+	len += ft_printhex(ptr, "0123456789abcdef");
+	return (len);
 }

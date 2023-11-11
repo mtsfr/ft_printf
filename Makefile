@@ -1,8 +1,11 @@
-SRC = ft_printf.c 
+SRC = ft_printf.c \
 	ft_printchar.c \
 	ft_printstr.c \
 	ft_printptr.c \
 	ft_printnbr.c \
+	ft_itoa.c \
+	ft_utoa_base.c \
+	ft_printhex.c \
 	ft_printf.h
 
 NAME = libftprintf.a
