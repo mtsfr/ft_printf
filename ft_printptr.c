@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:27:52 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/11 00:38:06 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/11 00:57:03 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_printptr(void *ptr)
 
 	len = 0;
 	address = (unsigned long long)ptr;
-	if (address == 0)
+	if (!address)
 	{
 		len = ft_printstr("(nil)");
 		return (len);
