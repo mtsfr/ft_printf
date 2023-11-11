@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:20:07 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 22:55:39 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:43:08 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	type_handle(const char c, va_list args)
 	else if (c == 'u')
 		len += ft_printunsigned(va_arg(args, unsigned int));
 	else if (c == 'x')
-		len += ft_printhex(va_arg(args, unsigned int), "0123456789abcdef");
+		len += ft_printhex((va_arg(args, unsigned int)), "0123456789abcdef");
 	else if (c == 'X')
-		len += ft_printhex(va_arg(args, unsigned int), "0123456789ABCDEF");
+		len += ft_printhex((va_arg(args, unsigned int)), "0123456789ABCDEF");
 	else if (c == '%')
 		len += ft_printchar('%');
 	return (len);
@@ -47,7 +47,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
+		if (str[i] == '%') //&& ft_strchr("cspdiuxX%", str[i + 1]))
 		{
 			len += type_handle((str[i + 1]), args);
 			i++;

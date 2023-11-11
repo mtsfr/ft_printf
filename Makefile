@@ -6,27 +6,31 @@ SRC = ft_printf.c \
 	ft_itoa.c \
 	ft_utoa_base.c \
 	ft_printhex.c \
+	ft_printunsigned.c \
 	ft_printf.h
-
 NAME = libftprintf.a
-OBJ = $(SRC:.c=.o)
-CC = cc
-RM = rm -rf
-ARC = ar -rcs
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-
-$(NAME):
-	@$(CC) $(CFLAGS) -c $(SRC)
-	@$(ARC) $(NAME) $(OBJ)
+OBJS = $(SRC:.c=.o)
+RM = rm -f
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
+
+$(OBJS): $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
+
 clean:
-	@$(RM) $(OBJ)
+	$(RM) $(OBJS) a.out
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
-re: fclean all
+RE: fclean name
 
-.PHONY: all clean fclean re
+cc: $(SRC)
+	$(CC) $(CFLAGS) $(SRC)
+
+.PHONY: all clean fclean

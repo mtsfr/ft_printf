@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 20:46:31 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 22:50:36 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/10 23:44:57 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ static size_t	nbrlen_base(int nbr, int base)
 char	*ft_utoa_base(int n, int base, char *hex)
 {
 	char		*str;
-	char		*hex;
 	size_t		len;
 	long long	num;
 
-	len = nbrlen(n);
+	len = nbrlen_base(n, base);
 	num = n;
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
