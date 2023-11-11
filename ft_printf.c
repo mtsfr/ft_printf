@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:20:07 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/11 00:26:30 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/11 02:12:49 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%') //&& ft_strchr("cspdiuxX%", str[i + 1]))
+		if (str[i] == '%')
 		{
 			len += type_handle((str[i + 1]), args);
 			i++;
