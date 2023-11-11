@@ -6,7 +6,7 @@
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:20:07 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 23:43:08 by mfaria-b         ###   ########.fr       */
+/*   Updated: 2023/11/11 00:26:30 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	type_handle(const char c, va_list args)
 	else if (c == 's')
 		len += ft_printstr(va_arg(args, char *));
 	else if (c == 'p')
-		len += ft_printptr(va_arg(args, unsigned long long));
+		len += ft_printptr(va_arg(args, void *));
 	else if (c == 'd' || c == 'i')
 		len += ft_printnbr(va_arg(args, int));
 	else if (c == 'u')

@@ -6,8 +6,7 @@ SRC = ft_printf.c \
 	ft_itoa.c \
 	ft_utoa_base.c \
 	ft_printhex.c \
-	ft_printunsigned.c \
-	ft_printf.h
+	ft_printunsigned.c
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

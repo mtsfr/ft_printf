@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 23:56:55 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 23:57:33 by mfaria-b         ###   ########.fr       */
+/*   Created: 2023/11/11 00:06:09 by mfaria-b          #+#    #+#             */
+/*   Updated: 2023/11/11 00:44:51 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 int		ft_printf(const char *str, ...);
 int		ft_printchar(char c);
 int		ft_printstr(const char *str);
-int		ft_printptr(unsigned long long ptr);
+int		ft_printptr(void *ptr);
 int		ft_printnbr(int nb);
 char	*ft_itoa(int n);
-char	*ft_utoa_base(int n, int base, char *hex);
-int		ft_printhex(unsigned int nbr);
-int		ft_printunsigned(unsigned int nb, char *hex);
+char	*ft_utoa_base(unsigned long long nbr, int base, char *hex);
+int		ft_printhex(unsigned int nbr, char *hex);
+int		ft_printunsigned(unsigned int nb);
 
 #endif
