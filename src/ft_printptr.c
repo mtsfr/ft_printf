@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaria-b <mfaria-b@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 21:54:21 by mfaria-b          #+#    #+#             */
-/*   Updated: 2023/11/10 21:56:54 by mfaria-b         ###   ########.fr       */
+/*   Created: 2023/11/08 21:27:52 by mfaria-b          #+#    #+#             */
+/*   Updated: 2023/11/11 02:13:50 by mfaria-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_printunsigned(unsigned int nb)
+int	ft_printptr(void *ptr)
 {
-	char	*ptr;
-	int		len;
+	int					len;
+	unsigned long long	address;
+	char				*str;
 
 	len = 0;
-	ptr = ft_utoa_base(nb, 10, "0123456789");
-	len = ft_printstr(ptr);
-	free(ptr);
+	address = (unsigned long long)ptr;
+	if (!address)
+	{
+		len = ft_printstr("(nil)");
+		return (len);
+	}
+	str = ft_utoa_base(address, 16, "0123456789abcdef");
+	len += ft_printstr("0x");
+	len += ft_printstr(str);
+	free(str);
 	return (len);
 }
